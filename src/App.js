@@ -39,3 +39,21 @@ const WEATHER =  gql`
   const { loading, error, data} = useQuery(WEATHER, {variables: zip});
   console.log("loading", loading);
   console.log("error", error)
+
+  //handleChange
+
+  const handleChange = (e) => {
+    console.log(e.target.name, e.target.value)
+    setZipInput(e.target.value)
+  };
+
+  //handleSubmit
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setZip({[e.target.name]: zipInput });
+    setZipInput('');
+  }
+
+  
+
