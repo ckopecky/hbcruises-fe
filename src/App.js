@@ -58,7 +58,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setZip({[e.target.name]: zipInput });
+    setZip({"zip": zipInput });
     setZipInput('');
   }
 
