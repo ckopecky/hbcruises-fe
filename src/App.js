@@ -107,7 +107,7 @@ function App() {
 						<input
 							name='zip'
 							onChange={handleChange}
-							type='text'
+							type='number'
               value={zipInput}
               placeholder="95126"
 						/>
