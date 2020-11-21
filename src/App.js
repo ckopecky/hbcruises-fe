@@ -3,7 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 
 import './App.css';
 import Form from './components/Form';
-import Overlay from './components/Overlay';
+import WeatherData from './components/WeatherData';
 
 const WEATHER = gql`
 	query getWeather($zip: String) {
@@ -25,9 +25,7 @@ function App() {
 
 	//query info
 	const { loading, error, data } = useQuery(WEATHER, { variables: zip });
-	console.log('loading', loading);
-	console.log('error', error);
-  console.log('data', data)
+
 	const changeZip = (zip) => {
 		setZipInput(zip);
 	};
@@ -37,13 +35,11 @@ function App() {
 		setZipInput('');
 	};
 
-	if (loading) return <h1>Loading...</h1>;
-	if (error) return <h1>Error :(</h1>;
 	//weather widget
 	return (
 		<div className='container'>
 			<div className='overlay'>
-				<Overlay data={data} />
+				<WeatherData data={data} loading={loading} error={error}/>
 				<Form
 					changeZip={changeZip}
 					submitZip={submitZip}
