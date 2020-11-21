@@ -57,3 +57,16 @@ const WEATHER =  gql`
 
   
 
+    <div>
+    {
+      data.weather.map(location => {
+        return (
+          <div key={location.city}>
+            <h2>{location.city}</h2>
+            <h3>{location.conditions}</h3>
+            <h3>{location.temperature}°</h3>
+          </div>
+        )
+      })
+    }
+  </div> 
