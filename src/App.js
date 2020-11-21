@@ -1,3 +1,7 @@
+import React, { useState } from 'react';
+import { useQuery, gql } from '@apollo/client';
+
+import './App.css';
 // query Query($weatherZipCode: String) {
 //   weather(zipCode: $weatherZipCode) {
 //     city
