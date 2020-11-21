@@ -35,6 +35,13 @@ const WEATHER =  gql`
   `;
 
 
+function App() {
+
+  //state for form
+  const [ zipInput, setZipInput ] = useState("95126");
+  const [ zip, setZip ] = useState({zip: "63701" });
+
+
   //query info
   const { loading, error, data} = useQuery(WEATHER, {variables: zip});
   console.log("loading", loading);
@@ -57,6 +64,12 @@ const WEATHER =  gql`
 
   
 
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Error :(</h1>
+    console.log("data", data);
+  //weather widget
+  return (
+    <>
     <form onSubmit={handleSubmit}>
       <div>
         <label>Zipcode?</label>
@@ -78,3 +91,9 @@ const WEATHER =  gql`
       })
     }
   </div> 
+    </>
+  )
+  
+}
+
+export default App;
