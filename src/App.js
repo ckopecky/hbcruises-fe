@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
+import { backgroundPics } from './assets';
 
 import './App.css';
 // query Query($weatherZipCode: String) {
@@ -36,64 +37,88 @@ const WEATHER = gql`
 `;
 
 function App() {
+	//state for form
+	const [zipInput, setZipInput] = useState('');
+	const [ zip, setZip ] = useState({ zip: '63701' });
 
-  //state for form
-  const [ zipInput, setZipInput ] = useState("95126");
-  const [ zip, setZip ] = useState({zip: "63701" });
+	//query info
+	const { loading, error, data } = useQuery(WEATHER, { variables: zip });
+	console.log('loading', loading);
+	console.log('error', error);
 
+	//handleChange
 
-  //query info
-  const { loading, error, data} = useQuery(WEATHER, {variables: zip});
-  console.log("loading", loading);
-  console.log("error", error)
+	const handleChange = (e) => {
+		console.log(e.target.name, e.target.value);
+		setZipInput(e.target.value);
+	};
 
-  //handleChange
+	//handleSubmit
 
-  const handleChange = (e) => {
-    console.log(e.target.name, e.target.value)
-    setZipInput(e.target.value)
-  };
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setZip({ zip: zipInput });
+		setZipInput('');
+	};
 
-  //handleSubmit
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setZip({"zip": zipInput });
-    setZipInput('');
-  }
-
-  
-
-  if(loading) return <h1>Loading...</h1>
-  if(error) return <h1>Error :(</h1>
-    console.log("data", data);
-  //weather widget
-  return (
-    <>
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Zipcode?</label>
-        <input name="zip" onChange={handleChange} type="text" value={zipInput} />
-      </div>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-
-    </form>
-    <div>
-    {
-      data.weather.map(location => {
-        return (
-          <div key={location.city}>
-            <h2>{location.city}</h2>
-            <h3>{location.conditions}</h3>
-            <h3>{location.temperature}°</h3>
-          </div>
-        )
-      })
-    }
-  </div> 
-    </>
-  )
-  
+	if (loading) return <h1>Loading...</h1>;
+	if (error) return <h1>Error :(</h1>;
+	console.log('data', data);
+	//weather widget
+	return (
+		<div className='container'>
+			<div className='overlay'>
+				{data.weather.map((location) => {
+					let backgroundPicture = backgroundPics[location.icon];
+					return (
+						<div
+							key={location.city}
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center',
+								height: '60%',
+                objectFit: 'cover',
+                borderRadius: '10px 10px 0px 0px',
+								backgroundImage:
+									'url(' + backgroundPicture + ')',
+							}}>
+							<div className='city-temperature'>
+								<div className='city-conditions'>
+									<h2>{location.city}</h2>
+									<div className='icon-conditions'>
+										<img
+											src={`http://openweathermap.org/img/wn/${location.icon}@2x.png`}
+											alt={location.conditions}
+										/>
+										<span className='conditions'>
+											{location.conditions}
+										</span>
+									</div>
+									<h3>{location.temperature}°F</h3>
+								</div>
+							</div>
+						</div>
+					);
+				})}
+				<form onSubmit={handleSubmit}>
+          <label>{`Enter Zipcode:  `}</label>
+					<div className="input-button">
+						<input
+							name='zip'
+							onChange={handleChange}
+							type='text'
+              value={zipInput}
+              placeholder="95126"
+						/>
+            <button type='submit' onClick={handleSubmit}>
+						Submit
+					</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	);
 }
 
 export default App;
