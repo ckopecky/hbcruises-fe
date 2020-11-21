@@ -22,18 +22,18 @@ import './App.css';
 //   "weatherZipCode": "95126"
 // }
 
-const WEATHER =  gql`
-    query getWeather($zip: String) {
-      weather(zip: $zip) {
-        city
-        temperature
-        conditions
-        zip
-
-      }
-    }
-  `;
-
+const WEATHER = gql`
+	query getWeather($zip: String) {
+		weather(zip: $zip) {
+			city
+			temperature
+			conditions
+			zip
+			icon
+			cloud_cover
+		}
+	}
+`;
 
 function App() {
 
