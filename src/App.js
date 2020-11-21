@@ -35,3 +35,7 @@ const WEATHER =  gql`
   `;
 
 
+  //query info
+  const { loading, error, data} = useQuery(WEATHER, {variables: zip});
+  console.log("loading", loading);
+  console.log("error", error)
