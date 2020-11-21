@@ -57,6 +57,14 @@ const WEATHER =  gql`
 
   
 
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Zipcode?</label>
+        <input name="zip" onChange={handleChange} type="text" value={zipInput} />
+      </div>
+      <button type="submit" onClick={handleSubmit}>Submit</button>
+
+    </form>
     <div>
     {
       data.weather.map(location => {
