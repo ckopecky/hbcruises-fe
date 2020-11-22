@@ -20,9 +20,10 @@ const WeatherData = ({data, loading, error}) => {
                                     <h2>Error</h2>
                                     <div className='icon-conditions error'>
                                         <h4>Zip code doesn't exist</h4>
-                                        <p>Have a kitten instead</p>
+                                        <p>Have a cat instead</p>
                                     </div>
-                                    <img src="http://www.placekitten.com/100/100" alt="placekitten" height="100" width="100"/>
+                                    <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/120270024_10102925663988191_8533342968999125116_o.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=fcYRNg-WC8sAX9W424o&_nc_ht=scontent-sjc3-1.xx&oh=8ca770359a4373c9cada4751a1b224b7&oe=5FDDA7D6" alt="placekitten" height="100" width="100"/>
+                                    <p>Try a new zipcode!</p>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +50,7 @@ const WeatherData = ({data, loading, error}) => {
                                                         {location.conditions}
                                                     </span>
                                                 </div>
-                                                <h3>{location.temperature}°F</h3>
+                                                <h3>{Math.round(location.temperature)}°F</h3>
                                             </div>
                                         </div>
                                     </div>
