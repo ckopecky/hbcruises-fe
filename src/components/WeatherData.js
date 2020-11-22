@@ -37,6 +37,7 @@ const WeatherData = ({data, loading, error}) => {
     return (
 	    data &&  
 			data.weather.map((location) => {
+                console.log(location);
                 backgroundPicture = backgroundPics[location.icon];
 				return (
 					<div

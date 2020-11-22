@@ -5,7 +5,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import App from './App';
 import './index.css';
 
-const clientURI = process.env.NODE_ENV === "production" ? "https://weather-app-ck-be.herokuapp.com/":"http://localhost:4000";
+const clientURI = process.env.NODE_ENV === "production" ? "https://weather-app-ck-be.herokuapp.com/":"http://localhost:4000/";
 
 const client = new ApolloClient({
   uri: clientURI,
