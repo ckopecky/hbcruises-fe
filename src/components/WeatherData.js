@@ -9,7 +9,7 @@ const WeatherData = ({data, loading, error}) => {
             (<div className="background" style={{
                 backgroundImage: '',
             }}>
-                <Loader type="ThreeDots" />
+                <Loader type="ThreeDots" color="darkred"/>
             </div>) : error ? 
                         (
                         <div className="background" style={{
