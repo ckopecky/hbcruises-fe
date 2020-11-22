@@ -14,6 +14,8 @@ const WEATHER = gql`
 			zip
 			icon
 			cloud_cover
+      error
+      message
 		}
 	}
 `;
