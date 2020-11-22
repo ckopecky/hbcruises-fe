@@ -12,6 +12,8 @@ export const backgroundPics = {
     "13d": "https://images.unsplash.com/photo-1516035645781-9f126e774e9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
     "9d": "https://images.unsplash.com/photo-1589937988940-1eb0fdb6137b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=933&q=80",
     "10d": "https://images.unsplash.com/photo-1518182170546-07661fd94144?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+    "10n": "https://images.unsplash.com/photo-1518182170546-07661fd94144?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
     "11d": "https://images.unsplash.com/photo-1602088501827-7912e1b4a7bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80",
+    "11n": "https://images.unsplash.com/photo-1602088501827-7912e1b4a7bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80",
     "default": "https://images.unsplash.com/photo-1560461311-0535e8fa1ba5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
 }
