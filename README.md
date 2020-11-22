@@ -7,7 +7,7 @@ Client: [Weather App CK Frontend](https://weather-app-ck-fe.vercel.app/)
 Frontend Built Using:
 React.js
 
-Dependencies:
+## Dependencies:
 
     "graphql": "^15.4.0",
     "react": "^17.0.1",
