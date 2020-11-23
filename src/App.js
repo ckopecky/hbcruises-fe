@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 
-import './App.css';
 import Form from './components/Form';
 import WeatherData from './components/WeatherData';
 
@@ -40,14 +39,12 @@ function App() {
 	//weather widget
 	return (
 		<div className='container'>
-			<div className='overlay'>
-				<WeatherData data={data} loading={loading} error={error}/>
-				<Form
-					changeZip={changeZip}
-					submitZip={submitZip}
-					zipInput={zipInput}
-				/>
-			</div>
+			<WeatherData data={data} loading={loading} error={error}/>
+			<Form
+				changeZip={changeZip}
+				submitZip={submitZip}
+				zipInput={zipInput}
+			/>
 		</div>
 	);
 }

@@ -21,18 +21,21 @@ const Form = ({zipInput, changeZip, submitZip}) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<label>{`Enter Zipcode:  `}</label>
-			<div className='input-button'>
-				<input
-					name='zip'
-                    onChange={handleChange}
-					type='number'
-					value={zipInput}
-                    placeholder='i.e. 95126'
-				/>
-				<button type='submit' onClick={handleSubmit}>
-					Submit
-				</button>
+			<div className='label-button'>
+				<label htmlFor="zip-input">{`Enter Zipcode:  `}</label>
+				<div>
+					<input
+						id="zip-input"
+						name='zip'
+						onChange={handleChange}
+						type='number'
+						value={zipInput}
+						placeholder='i.e. 95126'
+					/>
+					<button type='submit' onClick={handleSubmit}>
+						Submit
+					</button>
+				</div>
 			</div>
 		</form>
 	);
