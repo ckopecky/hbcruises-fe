@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Loader from 'react-loader-spinner';
 import { backgroundPics } from '../assets';
 import { errorPic, iconPicURL } from "../config";
