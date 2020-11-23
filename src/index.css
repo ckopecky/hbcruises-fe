@@ -276,8 +276,13 @@ img {
         flex-direction: column-reverse;
     }
 
+    .background-weather {
+        height: 80%;
+    }
+
     form {
         align-items: flex-end;
+        height: 20%;
     }
 
     .label-button {
