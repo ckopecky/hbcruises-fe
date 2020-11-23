@@ -159,7 +159,7 @@ body {
 }
 
 .background-weather {
-	height: 80%;
+	height: 90%;
     width: 100%;
     top: 0;
     left: 0;
@@ -188,7 +188,7 @@ body {
 }
 
 form {
-    height: 20%;
+    height: 10%;
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -276,13 +276,8 @@ img {
         flex-direction: column-reverse;
     }
 
-    .background-weather {
-        height: 90%;
-    }
-
     form {
         align-items: flex-end;
-        height: 10%;
     }
 
     .label-button {
