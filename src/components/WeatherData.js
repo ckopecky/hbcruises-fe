@@ -9,7 +9,7 @@ const WeatherData = ({ data, loading, error }) => {
 	backgroundPicture = backgroundPics['default'];
 	return loading ? (
 		<div
-			className='background-weather'
+			className='background-weather loader'
 			style={{
 				backgroundImage: '',
 			}}>

@@ -169,6 +169,12 @@ body {
 
 }
 
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
 .city-temperature {
 	background: rgba(202, 199, 199, .7);
     height: 95%;
